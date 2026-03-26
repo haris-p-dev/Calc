@@ -15,11 +15,14 @@ public class MemoryController {
 
     private AppServices appServices;
 
+    //error here
     @GetMapping("/calc/memory")
     public long memory(){
         return appServices.lastResult();
     }
 
+
+    //error here
     //clear list
     @PostMapping("/clear")
     public long clear(){
