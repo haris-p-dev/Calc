@@ -14,17 +14,17 @@ public class CalculatorController {
     }
 
     @GetMapping("/add")
-    public long add(@RequestParam long a,@RequestParam long b){
+    public double add(@RequestParam double a,@RequestParam double b){
         return appServices.addition(a,b);
     }
 
     @GetMapping("/sub")
-    public long sub(@RequestParam long a,@RequestParam long b){
+    public double sub(@RequestParam double a,@RequestParam double b){
         return appServices.sub(a,b);
     }
 
     @GetMapping("/memory")
-    public long memory(){
+    public double memory(){
         return appServices.lastResult();
     }
 
