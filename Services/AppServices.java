@@ -2,7 +2,6 @@ package com.example.demo.Services;
 
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.w3c.dom.ranges.Range;
 
 import java.util.ArrayList;
 
@@ -11,14 +10,12 @@ public class AppServices {
 
     private ArrayList<Long> list= new ArrayList<>();
 
-//    //give value in index 0
-//    public void setListElement(long x) {
-//        list.set(0,x);
-//    }
-
     //retrieve the last element
     public long lastResult(){
-        return list.get(0);
+        if(list.isEmpty()){
+            return 000000000000000;   //only solution I thought
+        }
+        else return list.get(0);
     }
 
     //addition logic
@@ -35,13 +32,18 @@ public class AppServices {
         else if(b==0){
                throw new ArithmeticException("Cannot divide by zero.");
             }
-        else
-        list.add(0,a/b);
+        else list.add(0,a/b);
         return a/b;
     }
 
-    public void clear(){
-        list.set(0,null);
+    //clear list
+    public String clear(){
+        if (list.isEmpty()) {
+            return "List is already clear";
+        }
+        else{
+            list.set(0,null);
+            return  "List cleared" ;}
     }
 
 }

@@ -1,10 +1,7 @@
 package com.example.demo.Controllers;
 
-
 import com.example.demo.Services.AppServices;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/calc")
@@ -17,12 +14,24 @@ public class CalculatorController {
     }
 
     @GetMapping("/add")
-    public long add(long a, long b){
+    public long add(@RequestParam long a,@RequestParam long b){
         return appServices.addition(a,b);
     }
 
     @GetMapping("/sub")
-    public long sub(long a, long b){
+    public long sub(@RequestParam long a,@RequestParam long b){
         return appServices.sub(a,b);
+    }
+
+    @GetMapping("/memory")
+    public long memory(){
+        return appServices.lastResult();
+    }
+
+    //clear list
+    @PostMapping("/memory/clear")
+    public void clear(){
+        appServices.clear();
+        System.out.println("Memory cleared");  //message will be shown in terminal
     }
 }

@@ -1,0 +1,59 @@
+# ========================
+# Maven
+# ========================
+target/
+!.mvn/wrapper/maven-wrapper.jar
+
+# ========================
+# IDEs
+# ========================
+
+# IntelliJ
+.idea/
+*.iml
+*.iws
+
+# Eclipse
+.project
+.classpath
+.settings/
+
+# VS Code
+.vscode/
+
+# ========================
+# OS files
+# ========================
+
+# Mac
+.DS_Store
+
+# Windows
+Thumbs.db
+Desktop.ini
+
+# ========================
+# Logs
+# ========================
+*.log
+
+# ========================
+# Environment
+# ========================
+.env
+
+# ========================
+# Compiled files
+# ========================
+*.class
+
+# ========================
+# Spring Boot
+# ========================
+*.jar
+*.war
+
+# ========================
+# Windows Zone Identifier (IMPORTANT)
+# ========================
+*:Zone.Identifier
