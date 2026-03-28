@@ -14,17 +14,17 @@ public class CalculatorController {
     }
 
     @GetMapping("/add")
-    public double add(@RequestParam double a,@RequestParam double b){
+    public Double add(@RequestParam Double a,@RequestParam Double b){
         return appServices.addition(a,b);
     }
 
     @GetMapping("/sub")
-    public double sub(@RequestParam double a,@RequestParam double b){
+    public Double sub(@RequestParam Double a,@RequestParam Double b){
         return appServices.sub(a,b);
     }
 
     @GetMapping("/memory")
-    public double memory(){
+    public Double memory(){
         return appServices.lastResult();
     }
 
@@ -32,6 +32,5 @@ public class CalculatorController {
     @PostMapping("/memory/clear")
     public void clear(){
         appServices.clear();
-        System.out.println("Memory cleared");  //message will be shown in terminal
     }
 }
